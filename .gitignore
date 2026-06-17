@@ -11,3 +11,5 @@ frontend/dist/
 .DS_Store
 *.db
 .env
+
+backend/seed.js

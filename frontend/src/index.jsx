@@ -1,7 +1,26 @@
 import './style.css'
-import ReactDom from 'react-dom/client'
-import Experience from './Experience.jsx'
+import ReactDOM from 'react-dom/client'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-const root = ReactDom.createRoot(document.querySelector('#root'))
+import Navbar from './components/Navbar.jsx'
+import Home from './pages/Home.jsx'
 
-root.render(<Experience />)
+import Product from './pages/Product.jsx'
+import Cart from './pages/Cart.jsx'
+import Login from './pages/Login.jsx'
+import Register from './pages/Register.jsx'
+
+const root = ReactDOM.createRoot(document.querySelector('#root'))
+
+root.render (
+    <BrowserRouter>
+        <Navbar />
+        <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/products/:id" element={<Product />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+        </Routes>
+    </BrowserRouter>
+)

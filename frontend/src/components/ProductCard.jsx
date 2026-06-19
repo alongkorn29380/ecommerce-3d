@@ -1,4 +1,5 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'
+import ModelViewer from './ModelViewer'
 
 export default function ProductCard({ product }) {
   const navigate = useNavigate();
@@ -9,7 +10,10 @@ export default function ProductCard({ product }) {
       className='border-2 border-gray-100 bg-white rounded-2xl shadow-sm cursor-pointer hover:-translate-y-1'
     >
       <div className='bg-gray-100 rounded-xl m-4 h-44 flex items-center justify-center'>
-        triangle SVG
+          <ModelViewer 
+            color="#ff0000" 
+            modelUrl="/Models/Cube.glb" 
+          />
       </div>
 
       <div className='px-[20px] pb-[20px]'>

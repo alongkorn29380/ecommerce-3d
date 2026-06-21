@@ -8,9 +8,14 @@ export default function Home() {
 
     useEffect(() => {
         const fetchProducts = async () => {
-            const url = category === 'All' ? '/products' : `/products?category=${category}`
-            const res = await api.get(url)
-            setProducts(res.data)
+            try {
+                const res = await api.get('/products', {
+                    params: category === 'All' ? {} : { category }
+                })
+                setProducts(res.data) 
+            } catch (error) {
+                console.error("Error fetching products:", error)
+            }
         }
         fetchProducts()
     }, [category])
@@ -22,13 +27,13 @@ export default function Home() {
                 <div className='text-center'>
                     <p className='text-[#605B51] pt-[40px] font-[100] text-[11px] tracking-[0.25em] uppercase subpixel-antialiased'>NEW COLLECTION 2026</p>
                     <h1 className='text-white font-black text-[40px] pt-[10px]'>Design Your Own.</h1>
-                    <p className='text-[#605B51] pt-[10px] pb-[58px]'>Every pice starts white. You choose the color.</p>
+                    <p className='text-[#605B51] pt-[10px] pb-[58px]'>Every piece starts white. You choose the color.</p>
                 </div>
             </div>
             
             {/* Filter */}
             <div className="flex gap-2 px-8 py-6">
-                {['All', 'Clothing', 'Shoes', 'Bags', 'Accessories'].map(cat => (
+                {['All', 'Fashion', 'Home & Lifestyle', 'Tech & Hobby'].map(cat => (
                     <button
                         key={cat}
                         onClick={() => setCategory(cat)}

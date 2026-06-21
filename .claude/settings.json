@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(run)",
+      "Skill(run:*)",
+      "Bash(curl -s -m 3 http://localhost:5000/api/products)",
+      "Bash(netstat -ano)",
+      "Bash(chromium-cli --help)",
+      "Bash(npx --no-install playwright --version)"
+    ]
+  }
+}

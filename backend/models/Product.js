@@ -19,10 +19,23 @@ const productSchema = new mongoose.Schema({
     model_url: {
         type: String
     },
-    color: {
-        type: [String],
-        default: ['#ffffff']
-    }
+    color: [{
+        hex: { 
+            type: String, 
+            required: true 
+        },
+        name: { 
+            type: String, 
+            required: true 
+        }
+        }],
+    hasSize: { 
+        type: Boolean, 
+        default: true 
+    },
+    image: {
+    type: String
+    },
 }, {
     timestamps: true 
 })

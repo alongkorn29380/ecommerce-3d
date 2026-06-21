@@ -29,7 +29,7 @@ export default function Navbar() {
                         </button>
                     </li>
                 ) : (
-                    // แก้ไข: ใช้ li ครอบชิ้นส่วนในลิสต์ และเพิ่มสไตล์ให้สวยงาม
+                    
                     <div className='flex items-center gap-4'>
                         <li>
                             <Link to="/login" className='hover:text-black transition'>Login</Link>

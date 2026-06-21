@@ -1,8 +1,10 @@
 import { Link, useNavigate } from 'react-router-dom'
+import { useCart } from '../context/CartContext.jsx'
 
 export default function Navbar() {
     const navigate = useNavigate()
     const token = localStorage.getItem('token')
+    const { cartCount } = useCart()
 
     const logout = () => {
         localStorage.removeItem('token')
@@ -15,8 +17,15 @@ export default function Navbar() {
                 <Link to="/">FORMA</Link>
             </div>
             <ul className='flex items-center gap-6 font-medium text-gray-600'>
-                <li >
-                    <Link to="/cart" className='hover:text-black transition'>Cart</Link>
+                <li className='relative'>
+                    <Link to="/cart" className='hover:text-black transition'>
+                        Cart
+                        {cartCount > 0 && (
+                            <span className='absolute -top-2 -right-3 bg-black text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center'>
+                                {cartCount}
+                            </span>
+                        )}
+                    </Link>
                 </li>
                 
                 {token ? (

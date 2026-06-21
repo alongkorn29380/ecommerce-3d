@@ -2,8 +2,10 @@ import { useState, useEffect } from "react"
 import { useParams, useNavigate, Link } from "react-router-dom"
 import api from '../api/axios.js'
 import ModelViewer from "../components/ModelViewer.jsx"
+import { useCart } from '../context/CartContext.jsx'
 
 export default function Product() {
+  const { addToCart } = useCart()
   const [product, setProduct] = useState(null)
   const [selectedColor, setSelectedColor] = useState(null)
   const [selectedSize, setSelectedSize] = useState('M')
@@ -97,8 +99,8 @@ export default function Product() {
               )}
 
               <button
-                onClick={() => console.log('add to cart clicked')}
-                className="bg-black text-white w-full py-3 rounded-lg mt-10 font-medium tracking-wide"
+                  onClick={() => addToCart(product, selectedColor, product.hasSize ? selectedSize : null, 1)}
+                  className="bg-black text-white w-full py-3 rounded-lg mt-10 font-medium tracking-wide"
               >
                 Add to Cart
               </button>

@@ -11,10 +11,12 @@ dotenv.config()
 
 const app = express()
 
+// 💡 แก้ไข CORS แบบยืดหยุ่น ยอมรับโดเมน Netlify ของคุณ และแบบมี / ตามหลังทั้งหมด
 app.use(cors({    
     origin: [        
         'http://localhost:5173',        
-        'https://ecommerce-3d.netlify.app' 
+        'https://ecommerce-3d.netlify.app',
+        'https://ecommerce-3d.netlify.app/'
     ],    
     credentials: true
 }))

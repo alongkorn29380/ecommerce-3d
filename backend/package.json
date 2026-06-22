@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "type": "module",
-  "scripts": {
-    "start": "PORT=5000 node server.js",
+ "scripts": {
+    "start": "node server.js",
+    "seed": "node seed.js",
     "dev": "nodemon server.js"
   },
   "keywords": [],

@@ -14,7 +14,7 @@ const app = express()
 app.use(cors({    
     origin: [        
         'http://localhost:5173',        
-        'https://your-app.vercel.app' 
+        'https://ecommerce-3d.netlify.app' 
     ],    
     credentials: true
 }))

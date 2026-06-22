@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 5000
 
 # 7. สั่งสตาร์ทแอปพลิเคชันโดยตรง
-CMD ["node", "server.js"]
+CMD npm run seed && npm run start

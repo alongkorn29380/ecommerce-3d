@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "type": "module",
- "scripts": {
+"scripts": {
     "start": "node server.js",
-    "seed": "node seed.js",
+    "seed": "node seed.js", 
     "dev": "nodemon server.js"
   },
   "keywords": [],

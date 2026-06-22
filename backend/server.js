@@ -27,12 +27,13 @@ app.use('/api/orders', orderRoutes)
 
 app.get('/', (req, res) => res.json({ status: 'ok' }))
 
+const PORT = process.env.PORT || 5000;
+
 mongoose.connect(process.env.MONGODB_URI)
     .then(() => {
         console.log('MongoDB connected')
-        app.listen(process.env.PORT || 5000, () => {
-            console.log(`server on port: ${process.env.PORT || 5000}`)
+        app.listen(PORT, '0.0.0.0', () => {
+            console.log(`server on port: ${PORT}`)
         })
     })
     .catch(err => console.error('DB Error:', err))
-    

@@ -9,6 +9,7 @@ import Product from './pages/Product.jsx'
 import Cart from './pages/Cart.jsx'
 import Login from './pages/Login.jsx'
 import Register from './pages/Register.jsx'
+import OrderSuccess from './pages/OrderSuccess.jsx'
 
 import { CartProvider } from './context/CartContext.jsx'
 
@@ -24,6 +25,7 @@ root.render (
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
+                <Route path="/order-success" element={<OrderSuccess />} />
             </Routes>
         </CartProvider>
     </BrowserRouter>

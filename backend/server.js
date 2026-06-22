@@ -15,7 +15,7 @@ app.use(express.json())
 
 app.use('/api/auth', authRouter)
 app.use('/api/products', productRoutes)
-app.use('/api/order', orderRoutes)
+app.use('/api/orders', orderRoutes)
 
 app.get('/', (req, res) => res.json({ status: 'ok' }))
 

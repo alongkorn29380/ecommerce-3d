@@ -1,15 +1,16 @@
-# Python
+**/node_modules/
+node_modules/
+
 backend/.venv/
 backend/__pycache__/
-backend/.env
 
-# Node
-frontend/node_modules/
+# Production builds
 frontend/dist/
+
+.env
+backend/.env
+backend/seed.js
 
 # General
 .DS_Store
 *.db
-.env
-
-backend/seed.js"node_modules/" 

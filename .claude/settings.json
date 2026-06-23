@@ -27,7 +27,8 @@
       "Bash(curl -s -m 5 http://localhost:5050/api/products)",
       "Bash(xargs -r docker stop)",
       "Bash(docker rmi *)",
-      "Bash(curl -s -m 15 -w \"\\\\nHTTP_STATUS:%{http_code}\\\\n\" https://ecommerce-3d-production.up.railway.app/api/products)"
+      "Bash(curl -s -m 15 -w \"\\\\nHTTP_STATUS:%{http_code}\\\\n\" https://ecommerce-3d-production.up.railway.app/api/products)",
+      "Bash(curl -s -m 15 -D - -o /dev/null -H \"Origin: https://ecommerce-3d.netlify.app\" https://ecommerce-3d-production.up.railway.app/api/products)"
     ]
   }
 }

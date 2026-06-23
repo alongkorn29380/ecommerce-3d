@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = import.meta.env.VITE_API_URL || 'https://ecommerce-3d-backend.railway.app';
+const API_URL = import.meta.env.VITE_API_URL || 'https://ecommerce-3d-production.up.railway.app';
 
 const api = axios.create({
     baseURL: API_URL, 

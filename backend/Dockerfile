@@ -1,5 +1,5 @@
 # 1. ใช้ Node.js เวอร์ชันเสถียรเป็นฐานในการรัน
-FROM node:18-alpine
+FROM node:20-alpine
 
 # 2. กำหนดโฟลเดอร์ทำงานภายในคอนเทนเนอร์
 WORKDIR /app

@@ -41,19 +41,19 @@ export default function Product() {
         <span>←</span> Back to store
       </Link>
 
-        <div className="flex bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden max-w-7xl mx-auto min-h-[600px] mt-[100px]">
+        <div className="flex flex-col md:flex-row bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden max-w-7xl mx-4 md:mx-auto min-h-0 md:min-h-[600px] mt-6 md:mt-[100px]">
 
-          <div className="w-1/2 bg-gray-100 flex flex-col items-center justify-center p-8">
-            <div className="w-full h-[480px] flex items-center justify-center">
-              <ModelViewer 
-                modelUrl={product.model_url} 
-                color={selectedColor?.hex} 
+          <div className="w-full md:w-1/2 bg-gray-100 flex flex-col items-center justify-center p-4 md:p-8">
+            <div className="w-full h-64 sm:h-80 md:h-[480px] flex items-center justify-center">
+              <ModelViewer
+                modelUrl={product.model_url}
+                color={selectedColor?.hex}
               />
             </div>
             <p className="text-gray-400 text-xs mt-4 tracking-wide">← drag to rotate →</p>
           </div>
 
-          <div className="w-1/2 p-8 flex flex-col justify-center space-y-12">
+          <div className="w-full md:w-1/2 p-6 md:p-8 flex flex-col justify-center space-y-6 md:space-y-12">
             <p className="text-gray-400 text-xs uppercase tracking-widest">{product.category}</p>
             <p className="font-bold text-3xl mt-3 tracking-wide">{product.name}</p>
             <p className="font-bold text-2xl mt-3 tracking-wide">฿{product.price}</p>
@@ -62,7 +62,7 @@ export default function Product() {
               <p className="text-gray-400 text-xs uppercase tracking-widest">
                 COLOR — <span className="text-black font-medium normal-case">{selectedColor?.name}</span>
               </p>
-              <div className="flex space-x-2 mt-3">
+              <div className="flex flex-wrap gap-2 mt-3">
                 {product.color?.map((c, index) => (
                   <button
                     key={index}
@@ -81,7 +81,7 @@ export default function Product() {
                   <p className="text-gray-400 text-xs uppercase tracking-widest">
                     SIZE — <span className="text-black font-medium">{selectedSize}</span>
                   </p>
-                  <div className="flex space-x-2 mt-3">
+                  <div className="flex flex-wrap gap-2 mt-3">
                     {sizes.map((s) => (
                       <button
                         key={s}
